@@ -20,7 +20,6 @@ function ShowMessages({ messages }) {
               <Avatar sx={{ mr: "10px" }}>U</Avatar>
               <Card
                 sx={{
-                  width: "auto",
                   maxWidth: "60%",
                   marginBottom: "20px",
                   padding: "10px 20px",
@@ -29,9 +28,14 @@ function ShowMessages({ messages }) {
               >
                 <Typography fontWeight={600}>User</Typography>
                 {message.msg}
-                <sub style={{ fontSize: "10px", marginLeft: "10px" }}>
+                <Typography
+                  sx={{
+                    fontSize: "10px",
+                    textAlign: "end",
+                  }}
+                >
                   {moment(message.time).format("HH:mm")}
-                </sub>
+                </Typography>
               </Card>
             </Box>
           )}
