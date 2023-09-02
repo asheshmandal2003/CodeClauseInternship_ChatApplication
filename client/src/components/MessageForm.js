@@ -1,4 +1,4 @@
-import { IconButton, OutlinedInput } from "@mui/material";
+import { IconButton } from "@mui/material";
 import React, { useState } from "react";
 import SendIcon from "@mui/icons-material/Send";
 import { socket } from "../socket";
@@ -10,7 +10,7 @@ function MessageForm() {
   const onSubmit = (e) => {
     e.preventDefault();
     if (value) {
-      socket.emit("send-message", value, socket.id);
+      socket.emit("send-message", socket.id, value, new Date());
       setValue("");
     }
   };

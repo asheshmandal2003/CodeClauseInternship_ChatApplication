@@ -22,8 +22,8 @@ const io = new Server(server, {
 
 io.on("connect", (socket) => {
   console.log(socket.id);
-  socket.on("send-message", (msg) => {
-    io.emit("show-messages", socket.id, msg);
+  socket.on("send-message", (id, msg, time) => {
+    io.emit("show-messages", id, msg, time);
   });
 });
 
